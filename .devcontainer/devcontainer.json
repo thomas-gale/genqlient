@@ -1,0 +1,17 @@
+{
+	"name": "ubuntu-go",
+	"dockerFile": "Dockerfile",
+	"context": "..",
+	"runArgs": [
+		// Allow Go debugger
+		"--cap-add=SYS_PTRACE",
+		"--security-opt",
+		"seccomp=unconfined",
+	],
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"golang.go"
+	],
+	// Uncomment to connect as a non-root user. See https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
